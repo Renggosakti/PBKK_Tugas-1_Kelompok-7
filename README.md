@@ -32,7 +32,8 @@ Browser → routes/web.php → PageController → Blade View (resources/views)
 
 | Rute | Fungsi |
 |---|---|
-| `/` | Beranda — identitas mahasiswa |
+| `/` | Beranda — profil Kelompok 7, seluruh anggota ditampilkan setara |
+| `/anggota/{nrp}` | Profil lengkap satu anggota kelompok |
 | `/about` | Profil Departemen Teknik Informatika ITS |
 | `/project-idea` | Rancangan ide proyek Agentic AI |
 | `/hitung/{angka1}/{angka2}/{operasi}` | Kalkulasi langsung lewat parameter URL |
