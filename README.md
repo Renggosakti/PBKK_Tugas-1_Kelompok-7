@@ -1,15 +1,14 @@
 # Sistem Informasi Statik Profil Mahasiswa — ITS Academic Profile
 
-**Kelompok 7 — S1 Teknik Informatika, Institut Teknologi Sepuluh Nopember**
+**Kelompok 7 — PBKK B Teknik Informatika, Institut Teknologi Sepuluh Nopember**
 
 ## Anggota Kelompok
-
-- Mochammad Irfan Sandy
-- Pradhipta Raja
-- Himawan Rakha Bhadra
-- M. Najib Bakhruddin
-- Arya Rangga
-- Hisyam Syafa
+- Mochammad Irfan Sandy — 5025241127
+- Pradhipta Raja — 5025241055
+- Himawan Rakha Bhadra — 5025241028
+- M. Najib Bakhruddin — 5025241230
+- Arya Rangga — 5025241072
+- Hisyam Syafa — 5025241130
 
 ## Tentang Aplikasi
 
