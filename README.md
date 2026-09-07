@@ -1,6 +1,6 @@
-# Sistem Informasi Statik Profil Mahasiswa — ITS Academic Profile
+# Sistem Informasi Statik Profil Mahasiswa - ITS Academic Profile
 
-**Kelompok 7 — PBKK B Teknik Informatika, Institut Teknologi Sepuluh Nopember**
+**Kelompok 7 - PBKK B Teknik Informatika, Institut Teknologi Sepuluh Nopember**
 
 ## Anggota Kelompok
 - Mochammad Irfan Sandy — 5025241127
