@@ -8,7 +8,7 @@
     <!-- Hero / Student Profile Header -->
     <div class="card card-modern p-4 p-md-5 mb-4 position-relative border-0 shadow-sm" style="background: linear-gradient(135deg, #FFFFFF 0%, #F1F6F9 100%); border-left: 5px solid var(--primary) !important;">
         <div class="row align-items-center g-4">
-            <div class="col-lg-8">
+            <div class="col-12">
                 <div class="d-flex align-items-center gap-2 mb-3">
                     <span class="badge-academic">
                         <i class="bi bi-mortarboard-fill"></i> ITS Academic Profile
@@ -21,14 +21,8 @@
                 <h1 class="display-6 fw-bold mb-2 text-dark">
                     Selamat Datang <span class="wave-hand">👋</span>
                 </h1>
-                
-                <h2 class="h3 fw-bold text-primary mb-1" id="student-name">
-                    {{ $student['name'] }}
-                </h2>
-                
+
                 <div class="d-flex flex-wrap align-items-center gap-3 text-secondary mb-3 font-monospace">
-                    <span><i class="bi bi-person-badge text-primary me-1"></i> NRP: <strong class="text-dark" id="student-nrp">{{ $student['nrp'] }}</strong></span>
-                    <span>&bull;</span>
                     <span><i class="bi bi-geo-alt text-primary me-1"></i> {{ $student['major'] }}</span>
                     <span>&bull;</span>
                     <span><i class="bi bi-people text-primary me-1"></i> {{ $student['group'] }}</span>
@@ -49,29 +43,6 @@
                     <a href="{{ route('calculator') }}" class="btn btn-outline-secondary" id="btn-hero-calc">
                         <i class="bi bi-calculator me-1"></i> Kalkulator Server
                     </a>
-                </div>
-            </div>
-
-            <!-- Student Profile Badge / Avatar Card -->
-            <div class="col-lg-4 text-center">
-                <div class="p-4 bg-white rounded-4 border shadow-sm mx-auto" style="max-width: 320px;">
-                    <div class="avatar-circle mx-auto mb-3">
-                        AR
-                    </div>
-                    <h5 class="fw-bold mb-1">{{ $student['name'] }}</h5>
-                    <p class="small text-muted mb-2 font-monospace">{{ $student['nrp'] }}</p>
-                    <div class="small badge bg-primary-subtle text-primary fw-semibold px-3 py-1 mb-3">
-                        Informatika ITS &bull; 2024
-                    </div>
-                    
-                    <div class="d-flex justify-content-center gap-2 pt-2 border-top">
-                        <a href="https://github.com/Renggosakti" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-pill px-3">
-                            <i class="bi bi-github me-1"></i> GitHub
-                        </a>
-                        <a href="mailto:aryarangga732@gmail.com" class="btn btn-sm btn-outline-primary rounded-pill px-3">
-                            <i class="bi bi-envelope me-1"></i> Email
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
