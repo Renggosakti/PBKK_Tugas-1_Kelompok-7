@@ -55,11 +55,11 @@
             <!-- Student Profile Badge / Avatar Card -->
             <div class="col-lg-4 text-center">
                 <div class="p-4 bg-white rounded-4 border shadow-sm mx-auto" style="max-width: 320px;">
-                    <div class="avatar-circle mx-auto mb-3">
+                    <div class="avatar-circle mx-auto mb-3" id="student-avatar">
                         AR
                     </div>
-                    <h5 class="fw-bold mb-1">{{ $student['name'] }}</h5>
-                    <p class="small text-muted mb-2 font-monospace">{{ $student['nrp'] }}</p>
+                    <h5 class="fw-bold mb-1" id="student-name-card">{{ $student['name'] }}</h5>
+                    <p class="small text-muted mb-2 font-monospace" id="student-nrp-card">{{ $student['nrp'] }}</p>
                     <div class="small badge bg-primary-subtle text-primary fw-semibold px-3 py-1 mb-3">
                         Informatika ITS &bull; 2024
                     </div>
@@ -110,7 +110,14 @@
 
                 <div class="team-list">
                     @foreach($group_members as $member)
-                    <div class="d-flex align-items-center justify-content-between team-item rounded-3">
+                    <div class="d-flex align-items-center justify-content-between team-item rounded-3 team-item-clickable"
+                         role="button" tabindex="0"
+                         data-name="{{ $member['name'] }}"
+                         data-nrp="{{ $member['nrp'] }}"
+                         data-role="{{ $member['role'] }}"
+                         data-initial="{{ substr($member['name'], 0, 1) }}"
+                         onclick="selectMember(this)"
+                         onkeypress="if(event.key==='Enter') selectMember(this)">
                         <div class="d-flex align-items-center gap-3">
                             <div class="avatar-sm" style="background-color: {{ $member['avatar_color'] }}; font-size: 0.95rem;">
                                 {{ substr($member['name'], 0, 1) }}
@@ -209,4 +216,48 @@
     </div>
 
 </div>
+
+<style>
+    .team-item-clickable {
+        cursor: pointer;
+        transition: background-color .15s ease, transform .1s ease;
+        padding: 0.6rem 0.75rem;
+    }
+    .team-item-clickable:hover {
+        background-color: #F1F6F9;
+    }
+    .team-item-clickable:active {
+        transform: scale(0.99);
+    }
+    .team-item-clickable.is-selected {
+        background-color: #E7F1F8;
+        outline: 2px solid var(--primary, #0F4C75);
+        outline-offset: -2px;
+    }
+</style>
+
+<script>
+    function selectMember(el) {
+        const name   = el.dataset.name;
+        const nrp    = el.dataset.nrp;
+        const initial = el.dataset.initial;
+
+        // Update sapaan "Selamat Datang" di hero
+        document.getElementById('student-name').textContent = name;
+        document.querySelector('#student-name').closest('.col-lg-8')
+            .querySelector('.d-flex.flex-wrap span strong')
+            ?.replaceChildren(document.createTextNode(nrp));
+
+        // Update kartu avatar di sisi kanan
+        document.getElementById('student-name-card').textContent = name;
+        document.getElementById('student-nrp-card').textContent = nrp;
+        document.getElementById('student-avatar').textContent = initial;
+
+        // Highlight kartu yang sedang dipilih
+        document.querySelectorAll('.team-item-clickable').forEach(item => {
+            item.classList.remove('is-selected');
+        });
+        el.classList.add('is-selected');
+    }
+</script>
 @endsection

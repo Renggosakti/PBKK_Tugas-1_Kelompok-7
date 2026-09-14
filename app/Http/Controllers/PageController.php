@@ -164,106 +164,109 @@ class PageController extends Controller
      * Halaman Ide Proyek Agentic AI (Project Idea)
      * Menjelaskan rancangan proyek kelompok berbasis Agentic AI untuk tugas akhir semester.
      */
+   /**
+     * Halaman Ide Proyek Agentic AI (Project Idea)
+     * Menjelaskan rancangan proyek kelompok berbasis Agentic AI untuk tugas akhir semester.
+     */
     public function project()
     {
         $project = [
-            'title' => 'Synthetix ITS: Autonomous Multi-Agent Academic Advisor & Capstone Co-Pilot',
+            'title' => 'FlowPilot: Autonomous Web QA, Security Testing & Self-Healing Repair Agent',
             'theme' => 'Agentic AI',
-            'scope' => 'Higher Education & Academic Workflow Automation',
-            'summary' => 'Synthetix ITS adalah platform otonom berbasis Agentic AI yang dirancang sebagai ekosistem pendamping akademik cerdas bagi mahasiswa Teknik Informatika ITS. Sistem ini memanfaatkan kolaborasi multi-agen yang proaktif dan memiliki kemampuan perencana tugas (task planning), pemanfaatan tools/API kurikulum (tool use), serta evaluasi mandiri (self-reflection).',
-            'problem' => 'Mahasiswa sering menghadapi fragmentasi informasi akademik: kebingungan dalam merencanakan pemilihan mata kuliah peminatan (FRS) yang sejalan dengan target karir, lambatnya iterasi konsultasi penentuan ide tugas akhir/capstone, serta keterbatasan waktu dosen wali untuk memberikan asistensi personal yang intensif dan real-time. Sistem portal akademik saat ini hanya bersifat administratif statis dan tidak menawarkan rekomendasi terpersonalisasi.',
+            'scope' => 'Web Application Quality Assurance, Security Testing & Automated Code Repair',
+            'summary' => 'FlowPilot adalah platform agentic AI yang secara otonom menjelajahi sebuah aplikasi web, menemukan masalah fungsional, aksesibilitas, performa, hingga keamanan, lalu menelusuri source code di repository GitHub terkait, mendiagnosis akar masalahnya, membuat perbaikan (patch), memvalidasinya lewat automated testing, dan akhirnya membuka Pull Request terverifikasi untuk direview manusia. Berbeda dari chatbot yang cuma menjelaskan, FlowPilot benar-benar bertindak: membuka browser, mengklik, mengisi form, membaca kode, dan mengubah repository.',
+            'problem' => 'Proses QA dan perbaikan bug pada aplikasi web umumnya masih sangat manual: developer harus mengetes tiap alur satu per satu, menelusuri log error secara manual, mencari lokasi bug di source code, menulis perbaikan, lalu memverifikasi ulang secara manual pula. Proses ini memakan waktu, rawan human error, dan celah keamanan (seperti Broken Access Control atau IDOR) seringkali baru diketahui setelah dieksploitasi karena scanner otomatis biasa sulit mendeteksi masalah pada level logika bisnis.',
             'target_users' => [
                 [
-                    'role' => 'Mahasiswa Teknik Informatika ITS',
-                    'icon' => 'bi-person-badge',
-                    'benefit' => 'Mendapatkan rekomendasi FRS adaptif, simulasi kelayakan skripsi/capstone, asistensi coding lab mandiri, dan petunjuk pathway karir keilmuan.'
+                    'role' => 'Developer & Tim Engineering',
+                    'icon' => 'bi-code-slash',
+                    'benefit' => 'Mendapat laporan bug fungsional, aksesibilitas, performa, dan keamanan secara otomatis, lengkap dengan Pull Request perbaikan yang sudah teruji, tinggal direview.'
                 ],
                 [
-                    'role' => 'Dosen Pembimbing & Dosen Wali',
-                    'icon' => 'bi-person-workspace',
-                    'benefit' => 'Menerima ringkasan otomatis kesiapan proposal mahasiswa, visualisasi roadmap studi, dan deteksi dini hambatan akademik.'
+                    'role' => 'QA Engineer / Tester',
+                    'icon' => 'bi-clipboard2-check',
+                    'benefit' => 'Terbantu regresi testing otomatis — setiap alur yang pernah gagal akan terus diuji ulang oleh agent tanpa perlu skenario manual berulang.'
                 ],
                 [
-                    'role' => 'Laboratorium Riset Departemen',
-                    'icon' => 'bi-building-gear',
-                    'benefit' => 'Mencocokkan minat mahasiswa dengan topik penelitian aktif yang sedang berjalan di laboratorium (RPL, KCV, AJK, MI, IGS, ALPRO).'
+                    'role' => 'Tim Keamanan Aplikasi (AppSec)',
+                    'icon' => 'bi-shield-lock',
+                    'benefit' => 'Mendapat temuan keamanan berbasis skenario nyata (multi-akun, broken access control, IDOR) yang sulit ditemukan scanner keamanan konvensional.'
                 ]
             ],
-            'solution' => 'Platform Synthetix mengorkestrasi 4 agen spesialis otonom yang saling berkoordinasi secara dinamis untuk menyelesaikan tugas akademik kompleks tanpa memerlukan instruksi manual berulang.',
+            'solution' => 'FlowPilot mengorkestrasi beberapa peran agent (browser agent, code agent, security agent) yang berbagi satu model bahasa kecil berbasis CPU, dikoordinasikan oleh Laravel sebagai orchestrator — menjalankan siklus: jelajahi aplikasi → temukan masalah → kumpulkan bukti → telusuri source code → diagnosis → buat patch → uji ulang → buka Pull Request.',
             'agents' => [
                 [
-                    'name' => 'Planner & Orchestrator Agent',
-                    'role' => 'Perencanaan & Dekomposisi Tugas',
-                    'icon' => 'bi-diagram-3-fill',
+                    'name' => 'Browser QA Agent',
+                    'role' => 'Eksplorasi & Pengujian Fungsional',
+                    'icon' => 'bi-window',
                     'color' => '#0F4C75',
-                    'description' => 'Menganalisis profil mahasiswa, mengurai target kelulusan menjadi milestone capaian semesteran, serta mendelegasikan tugas ke sub-agen spesialis.'
+                    'description' => 'Mengendalikan headless Chromium lewat Playwright untuk membuka halaman, mengisi form, mengklik tombol, dan mendeteksi error atau perilaku tak sesuai harapan secara otonom.'
                 ],
                 [
-                    'name' => 'Curriculum & FRS Retrieval Agent',
-                    'role' => 'Domain Knowledge & Aturan Akademik',
-                    'icon' => 'bi-book-fill',
+                    'name' => 'Security Testing Agent',
+                    'role' => 'Pengujian Keamanan Berbasis Skenario',
+                    'icon' => 'bi-shield-exclamation',
                     'color' => '#3282B8',
-                    'description' => 'Membaca basis pengetahuan kurikulum Informatika ITS, aturan prasyarat SKS, silabus mata kuliah, dan capaian kompetensi akreditasi IABEE.'
+                    'description' => 'Bekerja sama dengan OWASP ZAP untuk memantau traffic secara pasif, serta menjalankan skenario multi-akun untuk menemukan celah seperti Broken Access Control dan IDOR.'
                 ],
                 [
-                    'name' => 'Lab & Code Mentor Agent',
-                    'role' => 'Bimbingan Teknis & Praktikum',
-                    'icon' => 'bi-code-slash',
+                    'name' => 'Code Diagnosis & Repair Agent',
+                    'role' => 'Analisis Source Code & Pembuatan Patch',
+                    'icon' => 'bi-git',
                     'color' => '#0DCAF0',
-                    'description' => 'Memberikan telaah kode (code review), petunjuk debugging konseptual, dan rekomendasi referensi tanpa memberikan jawaban langsung demi menjaga integritas akademik.'
+                    'description' => 'Menelusuri repository GitHub terkait bug yang ditemukan, mempersempit konteks kode yang relevan, mendiagnosis akar masalah, lalu menghasilkan patch beserta regression test.'
                 ],
                 [
-                    'name' => 'Capstone Ideation & Literature Agent',
-                    'role' => 'Sintesis Riset & Paper Ilmiah',
-                    'icon' => 'bi-lightbulb-fill',
+                    'name' => 'Verification & PR Agent',
+                    'role' => 'Validasi Otomatis & Pembukaan Pull Request',
+                    'icon' => 'bi-check2-circle',
                     'color' => '#20c997',
-                    'description' => 'Membantu mahasiswa mengeksplorasi novelty topik skripsi, mensintesis paper terbaru dari IEEE/ACM, serta memetakan kesesuaian topik dengan lab di ITS.'
+                    'description' => 'Menjalankan test di lingkungan sementara (ephemeral workspace), memverifikasi bug benar-benar teratasi lewat pengujian ulang, lalu membuka Pull Request draf untuk direview manusia.'
                 ]
             ],
             'features' => [
                 [
-                    'title' => 'Autonomous FRS Pathway Simulator',
-                    'tag' => 'Perencanaan Studi',
-                    'desc' => 'Simulasi cerdas rencana pengambilan SKS semester depan berdasarkan riwayat IPK, minat laboratorium keilmuan, dan batas maksimum SKS.'
+                    'title' => 'Autonomous Functional & Accessibility QA',
+                    'tag' => 'Pengujian Otomatis',
+                    'desc' => 'Menjelajahi aplikasi web layaknya pengguna nyata — mengisi form, mengklik elemen non-standar, hingga menguji navigasi keyboard untuk menemukan masalah fungsional maupun aksesibilitas.'
                 ],
                 [
-                    'title' => 'Intelligent Capstone Feasibility Checker',
-                    'tag' => 'Tugas Akhir',
-                    'desc' => 'Analisis kebaruan (novelty) dan kelayakan teknis proposal tugas akhir yang dicocokkan dengan arah riset dosen Teknik Informatika ITS.'
+                    'title' => 'Multi-Account Security Scenario Testing',
+                    'tag' => 'Keamanan Aplikasi',
+                    'desc' => 'Menguji celah otorisasi seperti Broken Access Control dan IDOR dengan skenario lintas akun yang sulit ditemukan oleh scanner keamanan biasa.'
                 ],
                 [
-                    'title' => 'Multi-Agent Advisory Debate Room',
-                    'tag' => 'Kolaborasi Agen',
-                    'desc' => 'Fitur di mana dua agen dengan perspektif berbeda (misal: Praktikal Industri vs Teoretis Riset) mendiskusikan topik mahasiswa untuk menyajikan pandangan seimbang.'
+                    'title' => 'Root Cause Diagnosis dari Source Code',
+                    'tag' => 'Analisis Kode',
+                    'desc' => 'Menelusuri repository GitHub untuk menemukan lokasi kode penyebab bug, dengan mempersempit konteks secara deterministik sebelum diserahkan ke model AI.'
                 ],
                 [
-                    'title' => 'Contextual Reflection & Proactive Alert',
-                    'tag' => 'Monitoring Adaptif',
-                    'desc' => 'Penyimpanan memori jangka panjang mahasiswa yang mendeteksi penurunan performa praktikum dan memberikan notifikasi proaktif berisi saran remedial.'
+                    'title' => 'Verified Pull Request Generation',
+                    'tag' => 'Perbaikan Terverifikasi',
+                    'desc' => 'Membuat branch, patch, dan regression test, menjalankan CI, menguji ulang lewat browser, lalu membuka Pull Request draf — bukan sekadar saran, tapi perbaikan yang sudah terbukti bekerja.'
                 ]
             ],
             'impacts' => [
                 [
-                    'metric' => 'Efisiensi Perencanaan Studi',
-                    'highlight' => '60% Lebih Cepat',
-                    'desc' => 'Memangkas waktu eksplorasi mata kuliah dan penyiapan berkas FRS sebelum konsultasi langsung dengan dosen wali.'
+                    'metric' => 'Efisiensi Siklus QA',
+                    'highlight' => 'Deteksi & Verifikasi Otomatis',
+                    'desc' => 'Memangkas waktu pengujian manual berulang dengan agent yang menjelajah dan menguji aplikasi secara mandiri.'
                 ],
                 [
-                    'metric' => 'Kualitas Proposal Tugas Akhir',
-                    'highlight' => 'Literature Mapping Akurat',
-                    'desc' => 'Memastikan topik yang diajukan memiliki referensi ilmiah yang solid dan relevan dengan roadmap riset laboratorium.'
+                    'metric' => 'Cakupan Temuan Keamanan',
+                    'highlight' => 'Skenario Multi-Akun',
+                    'desc' => 'Menemukan celah logika bisnis (broken access control, IDOR) yang umumnya terlewat oleh scanner keamanan konvensional.'
                 ],
                 [
-                    'metric' => 'Integritas Akademik & Pembelajaran Mandiri',
-                    'highlight' => 'Socratic Mentoring',
-                    'desc' => 'Mendorong pemahaman konsep logika pemrograman secara mandiri dengan metode asistensi interaktif.'
+                    'metric' => 'Kualitas Perbaikan Kode',
+                    'highlight' => 'Human-in-the-Loop',
+                    'desc' => 'Setiap perbaikan divalidasi otomatis lewat testing sebelum diajukan sebagai Pull Request, dan tetap memerlukan review manusia sebelum di-merge.'
                 ]
             ]
         ];
 
         return view('project', compact('project'));
     }
-
     /**
      * Halaman Antarmuka Form Kalkulator (Calculator Landing Page)
      * Memberikan kemudahan interaksi kepada pengguna sebelum diarahkan ke route challenge.
