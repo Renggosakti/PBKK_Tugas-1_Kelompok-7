@@ -82,7 +82,7 @@
         <div class="mb-4 pb-2 border-bottom">
             <span class="badge-academic mb-2">Arsitektur Agen Otonom</span>
             <h3 class="h4 fw-bold text-primary mb-1">
-                <i class="bi bi-cpu-fill me-2"></i>4 Agen Spesialis dalam Ekosistem Synthetix
+                <i class="bi bi-cpu-fill me-2"></i>4 Agen Spesialis dalam Arsitektur FlowPilot
             </h3>
             <p class="text-muted small mb-0">
                 Setiap agen memiliki memori peran khusus (role persona), tools execution, dan mekanisme evaluasi reflektif.
@@ -122,7 +122,7 @@
                 <i class="bi bi-person-check-fill me-2"></i>Target Pengguna Sistem
             </h3>
             <p class="text-muted small mb-0">
-                Synthetix dirancang untuk mengintegrasikan tiga pemangku kepentingan utama dalam lingkup akademik Departemen Teknik Informatika ITS.
+                FlowPilot dirancang untuk mendukung tiga pemangku kepentingan utama dalam siklus pengembangan dan pengujian aplikasi web.
             </p>
         </div>
 
@@ -148,7 +148,7 @@
         <div class="mb-4 pb-2 border-bottom">
             <span class="badge-academic mb-2">Fitur Utama Sistem</span>
             <h3 class="h4 fw-bold text-primary mb-1">
-                <i class="bi bi-stars me-2"></i>Fitur Unggulan Synthetix ITS
+                <i class="bi bi-stars me-2"></i>Fitur Unggulan FlowPilot
             </h3>
             <p class="text-muted small mb-0">
                 Fitur dirancang untuk memecahkan hambatan akademik secara bertahap dan terotomatisasi.
@@ -181,8 +181,8 @@
             <div class="card card-modern p-4 p-md-5" style="background: linear-gradient(135deg, #F8FAFC 0%, #EDF4F8 100%);">
                 <div class="text-center mb-4">
                     <span class="badge-academic mb-2">Dampak & Manfaat</span>
-                    <h3 class="h4 fw-bold text-primary mb-1">Expected Academic Impact</h3>
-                    <p class="text-muted small">Tolok ukur keberhasilan implementasi platform bagi ekosistem akademik ITS</p>
+                    <h3 class="h4 fw-bold text-primary mb-1">Expected Impact</h3>
+                    <p class="text-muted small">Tolok ukur keberhasilan implementasi platform bagi kualitas dan keamanan aplikasi web</p>
                 </div>
 
                 <div class="row g-3">
